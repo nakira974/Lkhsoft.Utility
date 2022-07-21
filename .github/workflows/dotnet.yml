@@ -1,0 +1,34 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+      
+    - name: Package nuget
+      run: dotnet pack Lkhsoft.Utility.csproj --configuration debug -o:package
+      
+    - name: Push generated package to GitHub registry
+      run: | 
+       dotnet nuget add source https://nuget.pkg.github.com/nakira974/index.json --name github --username nakira974 --password ${{ secrets.NUGET_API_KEY }}  --store-password-in-clear-text
+       dotnet nuget push D:\a\Lkhsoft.Utility\Lkhsoft.Utility\package\*.nupkg --source github --skip-duplicate
+        
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
