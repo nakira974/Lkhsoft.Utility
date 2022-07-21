@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Lkhsoft.Utility</Title>
+        <Authors>nakira974</Authors>
+        <Description>Contain useful ASP.NET.Core services and others definitions</Description>
+        <PackageIcon>random_001.jpg</PackageIcon>
+        <RepositoryType>hg</RepositoryType>
+        <RepositoryUrl>http://localhost:81/Lkhsoft.Utility/</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.Analyzers" Version="6.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Metadata" Version="6.0.7" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
+      <PackageReference Include="Microsoft.NETCore.Platforms" Version="6.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="random_001.jpg">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+
+</Project>
