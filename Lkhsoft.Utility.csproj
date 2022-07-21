@@ -9,8 +9,8 @@
         <Authors>nakira974</Authors>
         <Description>Contain useful ASP.NET.Core services and others definitions</Description>
         <PackageIcon>random_001.jpg</PackageIcon>
-        <RepositoryType>hg</RepositoryType>
-        <RepositoryUrl>http://localhost:81/Lkhsoft.Utility/</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/nakira974/Lkhsoft.Utility</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
