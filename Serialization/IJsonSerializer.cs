@@ -1,6 +1,4 @@
-namespace Lkhsoft.Utility;
-
-using System.Threading.Tasks;
+namespace Lkhsoft.Utility.Serialization;
 
 /// <summary>
 /// Provide an access to JSON serialization/deserialization service

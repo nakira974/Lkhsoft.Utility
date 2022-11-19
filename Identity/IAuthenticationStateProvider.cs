@@ -1,4 +1,4 @@
-namespace Lkhsoft.Utility;
+namespace Lkhsoft.Utility.Identity;
 
 /// <summary>
 ///     Type servant à fournir un accès à plate-forme d'authentifcation ASP.NET.Core.Identity

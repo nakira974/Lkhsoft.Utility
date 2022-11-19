@@ -1,13 +1,10 @@
 // ReSharper disable ConvertToUsingDeclaration
 
-namespace Lkhsoft.Utility;
-
-using System;
-using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+
+namespace Lkhsoft.Utility.Serialization;
 
 /// <summary>
 /// <inheritdoc cref="IJsonSerializer"/>

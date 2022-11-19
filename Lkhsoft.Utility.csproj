@@ -11,9 +11,17 @@
         <PackageIcon>random_001.jpg</PackageIcon>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/nakira974/Lkhsoft.Utility</RepositoryUrl>
+        <PackageVersion>2.0.0</PackageVersion>
+        <PackageProjectUrl>https://github.com/nakira974/Lkhsoft.Utility</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/nakira974/Lkhsoft.Utility/blob/master/Licence</PackageLicenseUrl>
+        <PackageTags>dotnet utilities web</PackageTags>
+        <PackageReleaseNotes>- Add HttpClientBase that extends IHttpClientBase
+- Full rewrite off IHttpClient -&gt; IHttpClientBase</PackageReleaseNotes>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
       <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.7" />
       <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.7" />
       <PackageReference Include="Microsoft.AspNetCore.Components.Analyzers" Version="6.0.7" />
@@ -22,6 +30,8 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.11" />
       <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />

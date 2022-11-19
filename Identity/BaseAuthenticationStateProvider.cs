@@ -1,8 +1,9 @@
 // ReSharper disable TemplateIsNotCompileTimeConstantProblem
-namespace Lkhsoft.Utility;
 
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.Logging;
+
+namespace Lkhsoft.Utility.Identity;
 
 /// <summary>
 ///     Modèle de base pour les AuthenticationStateProvider contenant les prototypes des actions
