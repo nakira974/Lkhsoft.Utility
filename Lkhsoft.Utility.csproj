@@ -11,7 +11,7 @@
         <PackageIcon>random_001.jpg</PackageIcon>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/nakira974/Lkhsoft.Utility</RepositoryUrl>
-        <PackageVersion>2.0.0</PackageVersion>
+        <PackageVersion>3.0.0</PackageVersion>
         <PackageProjectUrl>https://github.com/nakira974/Lkhsoft.Utility</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/nakira974/Lkhsoft.Utility/blob/master/Licence</PackageLicenseUrl>
         <PackageTags>dotnet utilities web</PackageTags>
