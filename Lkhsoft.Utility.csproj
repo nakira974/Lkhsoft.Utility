@@ -11,7 +11,7 @@
         <PackageIcon>random_001.jpg</PackageIcon>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/nakira974/Lkhsoft.Utility</RepositoryUrl>
-        <PackageVersion>3.0.2</PackageVersion>
+        <PackageVersion>3.0.3</PackageVersion>
         <PackageProjectUrl>https://github.com/nakira974/Lkhsoft.Utility</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/nakira974/Lkhsoft.Utility/blob/master/Licence</PackageLicenseUrl>
         <PackageTags>dotnet utilities web</PackageTags>
@@ -23,9 +23,9 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
       <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.5" />
-      <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.16" />
       <PackageReference Include="Microsoft.AspNetCore.Components.Analyzers" Version="7.0.5" />
-      <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.16" />
       <PackageReference Include="Microsoft.AspNetCore.Metadata" Version="7.0.5" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
