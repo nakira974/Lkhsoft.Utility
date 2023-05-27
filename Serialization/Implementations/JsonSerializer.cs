@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Lkhsoft.Utility.Serialization;
+namespace Lkhsoft.Utility.Serialization.Implementations;
 
 /// <summary>
 /// <inheritdoc cref="IJsonSerializer"/>
@@ -19,7 +19,7 @@ public class JsonSerializer : IJsonSerializer
                                                           PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                                                       };
 
-    async Task<T> IJsonSerializer.DeserializeAsync<T>(string str)
+    public async Task<T> DeserializeAsync<T>(string str)
     {
         //how to return bool element
         try
@@ -29,14 +29,13 @@ public class JsonSerializer : IJsonSerializer
             await mStream.DisposeAsync();
             return result;
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new SerializerException(SerializerType.Json, ex);
         }
     }
 
-    T IJsonSerializer.Deserialize<T>(string str)
+    public T Deserialize<T>(string str)
     {
         try
         {
@@ -46,30 +45,28 @@ public class JsonSerializer : IJsonSerializer
             mStream.Dispose();
             return result;
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new SerializerException(SerializerType.Json, ex);
         }
     }
 
-    string IJsonSerializer.Serialize<T>(T obj)
+    public string Serialize<T>(T obj)
     {
         string result;
         try
         {
             result = System.Text.Json.JsonSerializer.Serialize(obj, _options);
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new SerializerException(SerializerType.Json, ex);
         }
 
         return result;
     }
 
-    async Task<string> IJsonSerializer.SerializeAsync<T>(T obj)
+    public async Task<string> SerializeAsync<T>(T obj)
     {
         string result;
         try
@@ -82,19 +79,19 @@ public class JsonSerializer : IJsonSerializer
             result = await reader.ReadToEndAsync();
             await stream.DisposeAsync();
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new SerializerException(SerializerType.Json, ex);
         }
 
         return result;
     }
 
-    void IJsonSerializer.CreateJsonFile(in string json, in string filePath)
+    public void Save<T>(in T obj, in string filePath)
     {
         try
         {
+            var       json         = this.Serialize(obj);
             using var sourceStream = File.Open(filePath, FileMode.OpenOrCreate);
             sourceStream.Dispose();
             using (var outputWriter = File.AppendText(filePath))
@@ -103,31 +100,13 @@ public class JsonSerializer : IJsonSerializer
                 outputWriter.Dispose();
             }
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new SerializerException(SerializerType.Json, ex);
         }
     }
 
-    public void CreateJsonFile<T>(in T obj, in string filePath)
-    {
-        try
-        {
-            var       json         = ((IJsonSerializer) this).Serialize(obj);
-            using var sourceStream = File.Create(filePath);
-            var       content      = new UTF8Encoding(true).GetBytes(json);
-            sourceStream.WriteAsync(content);
-            sourceStream.DisposeAsync();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-    }
-
-    public async Task CreateJsonFileAsync<T>(T obj, string filePath)
+    public async Task SaveAsync<T>(T obj, string filePath)
     {
         try
         {
@@ -137,31 +116,20 @@ public class JsonSerializer : IJsonSerializer
             await sourceStream.WriteAsync(content);
             await sourceStream.DisposeAsync();
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new SerializerException(SerializerType.Json, ex);
         }
     }
 
-    public async Task CreateJsonFileAsync(string json, string filePath)
+    public       T       Load<T>(string      filepath)
     {
-        try
-        {
-            await using var sourceStream = File.Open(filePath, FileMode.OpenOrCreate);
-            await sourceStream.DisposeAsync();
+        throw new NotImplementedException();
+    }
 
-            await using (var outputWriter = File.AppendText(filePath))
-            {
-                await outputWriter.WriteAsync(json);
-                await outputWriter.DisposeAsync();
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+    public async Task<T> LoadAsync<T>(string filepath)
+    {
+        throw new NotImplementedException();
     }
 }
 
