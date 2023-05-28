@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Lkhsoft.Utility.Serialization;
+﻿using Lkhsoft.Utility.Serialization;
 using Microsoft.Extensions.Logging;
 
 namespace Lkhsoft.Utility.WebServices;
