@@ -122,14 +122,32 @@ public class JsonSerializer : IJsonSerializer
         }
     }
 
-    public       T       Load<T>(string      filepath)
+    public T Load<T>(string filepath)
     {
-        throw new NotImplementedException();
+        try
+        {
+            using var reader   = new StreamReader(filepath);
+            var       contents = reader.ReadToEnd();
+            return Deserialize<T>(contents);
+        }
+        catch (Exception ex)
+        {
+            throw new SerializerException(SerializerType.Json, ex);
+        }
     }
 
     public async Task<T> LoadAsync<T>(string filepath)
     {
-        throw new NotImplementedException();
+        try
+        {
+            using var streamReader = new StreamReader(filepath);
+            var             contents     = await streamReader.ReadToEndAsync();
+            return await DeserializeAsync<T>(contents);
+        }
+        catch (Exception ex)
+        {
+            throw new SerializerException(SerializerType.Json, ex);
+        }
     }
 }
 
