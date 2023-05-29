@@ -11,7 +11,7 @@
         <PackageIcon>random_001.jpg</PackageIcon>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/nakira974/Lkhsoft.Utility</RepositoryUrl>
-        <PackageVersion>3.1.0</PackageVersion>
+        <PackageVersion>3.1.1</PackageVersion>
         <PackageProjectUrl>https://github.com/nakira974/Lkhsoft.Utility</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/nakira974/Lkhsoft.Utility/blob/master/Licence</PackageLicenseUrl>
         <PackageTags>dotnet utilities web</PackageTags>
@@ -21,7 +21,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0-1.final" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
@@ -31,9 +30,6 @@
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
       <PackageReference Include="Microsoft.Extensions.Primitives" Version="7.0.0" />
-      <PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.2" />
-      <PackageReference Include="System.CodeDom" Version="7.0.0" />
-      <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>

@@ -10,8 +10,8 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Emit;
+//using Microsoft.CodeAnalysis.CSharp;
+//using Microsoft.CodeAnalysis.Emit;
 namespace Lkhsoft.Utility.Serialization.Implementations;
 
 public class XmlToCsharpSerializer
