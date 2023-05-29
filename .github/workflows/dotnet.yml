@@ -27,7 +27,7 @@ jobs:
       
     - name: Push generated package to GitHub registry
       run: | 
-       dotnet nuget update source github --username nakira974 --password ${{ secrets.NUGET_API_KEY }}  --store-password-in-clear-text
+       dotnet nuget update source nakira974.github --username nakira974 --password ${{ secrets.NUGET_API_KEY }}  --store-password-in-clear-text
        dotnet nuget push D:\a\Lkhsoft.Utility\Lkhsoft.Utility\package\*.nupkg --source github --skip-duplicate
         
     - name: Test
